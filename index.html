@@ -46,7 +46,9 @@
             自作サーバで運用しています。
             ドメインを取得してからネームサーバーへの登録、
             リバースプロキシの設定まで、すべて自分で行いました。
-            コンテナ技術や、データベースのレプリケーションで負荷分散を行っています。
+            コンテナ技術や、データベースのレプリケーションで負荷分散を行っています。<br/>
+            pub/sub型のアーキテクチャを採用。ポーリングなどで余計な通信を行わない用に効率化した。<br/>
+            <a href="https://pubsubhubbub.github.io/PubSubHubbub/pubsubhubbub-core-0.4.html" target=”_blank”>PubSubHubbub Core 0.4プロトコル</a>にしたがって、subscriber側のサーバーをfastAPIで実装した。<br/>
             <img src="images/work.png" alt="サンプル画像" width="600px">
         </p>
         <p>
