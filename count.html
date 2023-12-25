@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>My activity history</title>
+
+</head>
+<body>
+    <script>
+        // 外部テンプレートを読み込む
+        fetch('init.html').then(response => response.text()).then(data => {
+            document.body.innerHTML += data;
+            const template = document.getElementById('init');
+            const content = template.content.cloneNode(true);
+            document.getElementById('init_area').appendChild(content);
+        });
+    </script>
+
+    <div id="init_area"></div>
+
+    <hr/>
+    <menu>
+        <h1>目次</h1>
+        <strong>研究</strong>
+        <li>grad-camを用いた、画像認識aiの判断根拠の視覚化と、医用への応用</li>
+        <li><a href="container.html">コンテナ仮想化技術を利用した、同一ローカル内でのデータレプリケーション</a></li>
+        <br>
+        <strong>制作したシステム等</strong>
+        <li><a href="count.html">視聴者数カウントWebシステム. count viewers of live stream system</a></li>
+        <li><a href="blockchain.html">擬似ブロックチェーン決済システム. fake blockchain payment system</a></li>
+        <li><a href="studentPortal.html">学生用ポータルchrome拡張. chrome extension for student (*no longer support)</a></li>
+    </menu>
+    <hr/>
+    
+    <h2>3. 視聴者数カウントWebシステム. count viewers of live stream system</h2>
+    <p>
+        視聴者数をカウントするwebシステムを運用しています.<br/>
+        I run a web system that counts the number of viewers.<br/>
+    </p>
+
+    <p>
+        運用しているサイト↓↓↓<br/>
+        <a href="http://www.countstream.com/" target=”_blank”>http://www.countstream.com/</a><br/>
+        <img src="images/ui.png" alt="サンプル画像" width="400px">
+    </p>
+    <div>
+        <p>
+            <h3>1.1 サイトの仕組み. How the site works.</h3>
+            自作サーバで運用しています。
+            ドメインを取得してからネームサーバーへの登録、
+            リバースプロキシの設定まで、すべて自分で行いました。
+            コンテナ技術や、データベースのレプリケーションで負荷分散を行っています。<br/>
+            pub/sub型のアーキテクチャを採用。ポーリングなどで余計な通信を行わない用に効率化した。<br/>
+            <a href="https://pubsubhubbub.github.io/PubSubHubbub/pubsubhubbub-core-0.4.html" target=”_blank”>PubSubHubbub Core 0.4プロトコル</a>にしたがって、subscriber側のサーバーをfastAPIで実装した。<br/>
+            <img src="images/work.png" alt="サンプル画像" width="600px"><br/>
+            マルチプロセスでインスタンスを管理しています。<br/>
+            <img src="images/program.png" alt="サンプル画像" width="600px">
+        </p>
+        <p>
+            以下は自作したプログラムコードです.<br/>
+            The following is the programme code created.
+        </p>
+        <p>
+            <ul>
+                <strong>GitHub Repository</strong>
+                <li>
+                    nextjsを使用したフロントエンド. Front end with nextjs.<br/>
+                    <a href="https://github.com/senbe0/YTpages" target=”_blank”>https://github.com/senbe0/YTpages</a><br/>        
+                </li>
+                <li>
+                    情報収集用. For information collection.<br/>
+                    <a href="https://github.com/senbe0/YTscraping" target=”_blank”>https://github.com/senbe0/YTscraping</a><br/>        
+                </li>
+                <li>
+                    データベースサーバー. Database server.<br/>
+                    <a href="https://github.com/senbe0/YTdatabase" target=”_blank”>https://github.com/senbe0/YTdatabase</a><br/>        
+                </li>
+            </ul>
+            <ul>
+                <strong>Docker Hub</strong>
+                <li>
+                    main database server
+                    <a href="https://hub.docker.com/r/ssshelloworld/ytmaster/tags" target="_blank">https://hub.docker.com/r/ssshelloworld/ytmaster/tags</a>
+                </li>
+                <li>
+                    secondary datavase server
+                    <a href="https://hub.docker.com/r/ssshelloworld/ytslave01" target="_blank">https://hub.docker.com/r/ssshelloworld/ytslave01</a>
+                </li>
+            </ul>
+        </p>
+    </div>
+    <hr/>
+    <div style="text-align: center;">
+        2023 written by Eiji
+    </div>
+    
+
+
+</body>
+</html>

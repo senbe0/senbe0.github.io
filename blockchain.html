@@ -8,25 +8,33 @@
 
 </head>
 <body>
-    <h1>My activity history</h1>
-    <p>
-        作成したwebサイトやシステムなどを掲載していきます。
-        何かご用件がございましたら、お気軽にメールしてください。
-        ちなみに就職先はまだ決まっていません。(´；ω；｀) ﾀﾞﾚｶﾔﾄｯﾃ<br/><br/>
-        
-        email : <strong>sambei13579@gmail.com</strong><br/><br/>
-        基本情報技術者、mos excel 2016 specialist<br/>
-        <a href="https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/TWI2dXBxNEUvNEtZUkxWSHZIc0RVZz09" target=”_blank”>openBadge: システム開発プロセス<br/><br/><img src="images/openBadge.png" width="100px"></a>
-    </p>
+    <script>
+        // 外部テンプレートを読み込む
+        fetch('init.html').then(response => response.text()).then(data => {
+            document.body.innerHTML += data;
+            const template = document.getElementById('init');
+            const content = template.content.cloneNode(true);
+            document.getElementById('init_area').appendChild(content);
+        });
+    </script>
+
+    <div id="init_area"></div>
+
     <hr/>
     <menu>
-        <strong>activities 制作したシステム一覧 </strong>
-        <li><a href="index.html">視聴者数カウントWebシステム. count viewers of live stream system</a></li>
-        <li>擬似ブロックチェーン決済システム. fake blockchain payment system</li>
+        <h1>目次</h1>
+        <strong>研究</strong>
+        <li>grad-camを用いた、画像認識aiの判断根拠の視覚化と、医用への応用</li>
+        <li><a href="container.html">コンテナ仮想化技術を利用した、同一ローカル内でのデータレプリケーション</a></li>
+        <br>
+        <strong>制作したシステム等</strong>
+        <li><a href="count.html">視聴者数カウントWebシステム. count viewers of live stream system</a></li>
+        <li><a href="blockchain.html">擬似ブロックチェーン決済システム. fake blockchain payment system</a></li>
         <li><a href="studentPortal.html">学生用ポータルchrome拡張. chrome extension for student (*no longer support)</a></li>
     </menu>
     <hr/>
-    <h2>2. 擬似ブロックチェーン決済システム. fake blockchain payment system</h2>
+
+    <h2>4. 擬似ブロックチェーン決済システム. fake blockchain payment system</h2>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/syzqQGz3PaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     <div>
